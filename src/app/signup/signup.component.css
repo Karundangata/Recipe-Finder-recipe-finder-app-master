@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.leftMenuBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #3ab399;
+  background-color: #3ab399;
+  color: white;
+  padding: 8rem;
+  gap: 2rem;
+  width: 50%;
+  height: 63vh;
+}
+
+.welcomeBack {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.signIn {
+  border: 1px solid white;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 10px;
+}
+
+.signIn:hover{
+  background-color: white;
+}
+
+.signIn button {
+  border: none;
+  color: white;
+  background-color: #3ab399;
+  font-weight: bold;
+}
+
+.signIn button:hover{
+  background-color: white;
+  color: #3ab399;
+}
+
+
+
+.rightMenuBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20rem;
+  width: 50%;
+  height: 10.5vh;
+  border: 1px solid #d9d9d9;
+}
+
+.createAccount {
+  color: #3ab399;
+  font-size: 2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputs input {
+  padding: 0.5rem;
+  background-color: #c3c6c5;
+  border: none;
+  border-radius: 10px;
+}
+
+.signUp button {
+  background-color: #3ab399;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-top: 2rem;
+}
+
+.signUp button:hover{
+  border: 1px solid #3ab399 ;
+  background-color: white;
+  color: #3ab399;
+}
+
+.error{
+  color: red;
+  margin-top: 1rem;
+}

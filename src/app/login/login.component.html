@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="leftMenuBar">
+    <div class="discoverRecipes">
+      <p>SIGN IN TO DISCOVER RECIPES</p>
+    </div>
+
+    <div class="inputs">
+      <input type="text" placeholder="Email" [(ngModel)]="email" />
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
+    </div>
+
+    <div  (click)="loginUser()" class="signIn" >
+      <button>SIGN IN</button>
+    </div>
+    <!-- use *ngIf directive to conditionally show or hide this element based on truthiness of an expression -->
+    <!-- in this case it is initially empty which means it will be evaluated to false and the element will be hidden -->
+    <!-- we use string interpolation. if the error property contains text, it will be displayed here -->
+    <div class="error" *ngIf="error">{{error}}</div>
+  </div>
+  <div class="rightMenuBar">
+    <div class="helloFriend">
+      <p>Hello,Friend!!</p>
+    </div>
+
+    <div class="personalDetails">
+      <p>Enter your personal details and start your journey with us</p>
+    </div>
+
+    <div routerLink="/signup" class="signUp">
+      <button>SIGN UP</button>
+    </div>
+  </div>
+</div>

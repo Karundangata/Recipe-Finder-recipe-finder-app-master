@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.discoverRecipes {
+  color: #3ab399;
+  font-size: 1.7rem;
+}
+
+.leftMenuBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  color: white;
+  padding: 8rem;
+  gap: 1rem;
+  width: 50%;
+  height: 63vh;
+}
+
+.welcomeBack {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.signUp {
+  border: 1px solid white;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+
+.signUp:hover{
+  background-color: white;
+}
+
+
+.signUp button {
+  border: none;
+  color: white;
+  background-color: #3ab399;
+  font-weight: bold;
+}
+
+.signUp button:hover{
+  background-color: white;
+  color: #3ab399;
+}
+
+.rightMenuBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20rem;
+  width: 20%;
+  height: 10.5vh;
+  background-color: #3ab399;
+  color: white;
+  border: 1px solid #3ab399;
+}
+
+.helloFriend {
+  font-size: 2.5rem;
+}
+
+.personalDetails {
+  font-size: 1rem;
+}
+
+.createAccount {
+  color: #3ab399;
+  font-size: 2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputs input {
+  padding: 0.5rem;
+  background-color: #c3c6c5;
+  border: none;
+  border-radius: 10px;
+}
+
+.signIn button {
+  background-color: #3ab399;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+
+.signIn button:hover{
+  border: 1px solid #3ab399 ;
+  background-color: white;
+  color: #3ab399;
+}
+
+.error{
+  color: red;
+}

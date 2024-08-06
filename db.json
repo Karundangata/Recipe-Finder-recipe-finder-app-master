@@ -1,0 +1,127 @@
+{
+  "users": [
+    {
+      "id": 25,
+      "name": "ndambuki",
+      "email": "ndambuki@gmail.com",
+      "password": "54321"
+    },
+    {
+      "id": 26,
+      "name": "john",
+      "email": "john@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Spaghetti Carbonara",
+      "description": "Delicious pasta dish with eggs, cheese, and bacon",
+      "ingredients": "Spaghetti, eggs, Parmesan cheese, bacon, black pepper",
+      "cookingInstructions": "Cook spaghetti until al dente, whisk eggs and cheese, fry bacon until crispy, mix all together and serve hot",
+      "preparationTime": "20 minutes",
+      "servings": "4"
+    },
+    {
+      "id": 2,
+      "name": "Classic Margherita Pizza",
+      "description": "Delicious pizza topped with tomatoes, mozzarella, and basil leaves.",
+      "ingredients": [
+        "pizza dough",
+        "tomatoes",
+        "fresh mozzarella",
+        "fresh basil",
+        "olive oil",
+        "salt",
+        "pepper"
+      ],
+      "cookingInstructions": "1. Roll out the pizza dough. \n2. Top with sliced tomatoes and mozzarella. \n3. Drizzle with olive oil and season with salt and pepper. \n4. Bake in a preheated oven until golden and bubbly. \n5. Garnish with fresh basil leaves. \n6. Slice and serve hot.",
+      "preparationTime": "30 minutes",
+      "servings": "2-4"
+    },
+    {
+      "id": 3,
+      "name": "Creamy Garlic Butter Shrimp Pasta",
+      "description": "Creamy pasta with succulent garlic butter shrimp.",
+      "ingredients": [
+        "linguine pasta",
+        "shrimp",
+        "butter",
+        "garlic",
+        "heavy cream",
+        "parmesan cheese",
+        "salt",
+        "black pepper"
+      ],
+      "cookingInstructions": "1. Cook linguine pasta until al dente. \n2. In a skillet, melt butter and sauté minced garlic. \n3. Add shrimp and cook until pink. \n4. Pour in heavy cream and simmer until thickened. \n5. Toss the cooked pasta in the sauce. \n6. Sprinkle with grated parmesan cheese, salt, and black pepper. \n7. Serve immediately.",
+      "preparationTime": "25 minutes",
+      "servings": "3-4"
+    },
+    {
+      "id": 4,
+      "name": "Grilled Chicken Salad",
+      "description": "Healthy and refreshing grilled chicken salad.",
+      "ingredients": [
+        "chicken breast",
+        "lettuce",
+        "cucumber",
+        "cherry tomatoes",
+        "red onion",
+        "olive oil",
+        "lemon juice",
+        "salt",
+        "black pepper"
+      ],
+      "cookingInstructions": "1. Season chicken breast with salt and black pepper. \n2. Grill until cooked through. \n3. Chop lettuce, cucumber, cherry tomatoes, and red onion. \n4. Slice the grilled chicken. \n5. In a bowl, whisk together olive oil and lemon juice to make the dressing. \n6. Toss the salad ingredients with the dressing. \n7. Top with grilled chicken slices. \n8. Serve chilled.",
+      "preparationTime": "20 minutes",
+      "servings": "2-3"
+    },
+    {
+      "id": 5,
+      "name": "Spaghetti Bolognese",
+      "description": "Classic Italian pasta dish with rich tomato meat sauce.",
+      "ingredients": [
+        "spaghetti",
+        "ground beef",
+        "onion",
+        "garlic",
+        "canned tomatoes",
+        "tomato paste",
+        "red wine",
+        "beef broth",
+        "oregano",
+        "basil",
+        "parmesan cheese",
+        "salt",
+        "black pepper"
+      ],
+      "cookingInstructions": "1. Cook spaghetti until al dente. \n2. In a pan, sauté chopped onion and minced garlic. \n3. Add ground beef and cook until browned. \n4. Stir in canned tomatoes, tomato paste, red wine, beef broth, oregano, and basil. \n5. Simmer the sauce until thickened. \n6. Season with salt and black pepper to taste. \n7. Serve the Bolognese sauce over cooked spaghetti. \n8. Garnish with grated parmesan cheese.",
+      "preparationTime": "35 minutes",
+      "servings": "4-6"
+    },
+    {
+      "id": 6,
+      "name": "Roasted Vegetables Quinoa Bowl",
+      "description": "Nutritious and colorful quinoa bowl with roasted vegetables.",
+      "ingredients": [
+        "quinoa",
+        "sweet potato",
+        "zucchini",
+        "bell peppers",
+        "red onion",
+        "olive oil",
+        "cumin",
+        "paprika",
+        "garlic powder",
+        "salt",
+        "black pepper",
+        "avocado",
+        "fresh cilantro"
+      ],
+      "cookingInstructions": "1. Cook quinoa according to package instructions. \n2. Preheat the oven and roast sweet potato, zucchini, bell peppers, and red onion with olive oil, cumin, paprika, garlic powder, salt, and black pepper. \n3. In a bowl, assemble the quinoa and roasted vegetables. \n4. Top with sliced avocado and fresh cilantro. \n5. Serve as a nutritious and satisfying quinoa bowl.",
+      "preparationTime": "30 minutes",
+      "servings": "2-3"
+    }
+  ]
+}

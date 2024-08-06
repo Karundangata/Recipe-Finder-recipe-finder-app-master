@@ -1,0 +1,256 @@
+<div class="container">
+  <div class="navbar">
+    <div class="planlife">
+      <p class="panlifeparagraph">Plan<span>life</span></p>
+      <p class="heathymeals">Healthy meals, healthy life</p>
+      <div class="createNew" (click)="toggleForm()">
+        <p><span>+</span> Create New</p>
+      </div>
+    </div>
+    <div class="discover">
+      <p class="hello">Hello {{ currentUser?.name }},</p>
+      <p class="recipes">Discover Recipes</p>
+      <div class="search-bar">
+        <input
+          type="text"
+          class="navbarsearchbar"
+          placeholder="Search for recipes, ingredients and tags"
+          [(ngModel)]="searchQuery"
+        />
+        <i class="fas fa-search search-icon"></i>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="leftMenuBar">
+      <p><i class="fas fa-bars"></i>MENU</p>
+      <p><i class="fas fa-home"></i>Dashboard</p>
+      <p><i class="fas fa-book"></i>My recipes</p>
+
+      <p><i class="fas fa-user"></i>Your account</p>
+      <p (click)="openUserProfileDialog()"><i class="fas fa-cog"></i>Account</p>
+      <p (click)="logout()"><i class="fas fa-sign-out-alt"></i>Logout</p>
+    </div>
+
+    <div class="rightMenuBar">
+      <div class="image">
+        <img src="assets/recipe.jpg" alt="Recipe image" />
+      </div>
+      <p>Categories</p>
+
+      <div class="categories">
+        <!-- ngFor allows you to loop through a certain condition -->
+        <div
+          class="apetizers"
+          *ngFor="let recipe of recipes"
+          (click)="openRecipeDetails(recipe)"
+        >
+          <p>{{ recipe.name }}</p>
+        </div>
+      </div>
+
+      <!-- pop up dialog -->
+      <div
+        class="recipe-details-dialog"
+        [ngClass]="{ 'show-dialog': selectedRecipe }"
+        (click)="closeRecipeDetails()"
+      >
+        <div class="dialog-content" (click)="$event.stopPropagation()">
+          <h2>{{ selectedRecipe?.name }}</h2>
+          <p>Description: {{ selectedRecipe?.description }}</p>
+          <p>Ingredients: {{ selectedRecipe?.ingredients }}</p>
+          <p>Cooking Instructions: {{ selectedRecipe?.cookingInstructions }}</p>
+          <p>Preparation Time: {{ selectedRecipe?.preparationTime }}</p>
+          <p>Servings: {{ selectedRecipe?.servings }}</p>
+          <!-- Add other recipe details here -->
+          <button (click)="closeRecipeDetails()">Close</button>
+        </div>
+      </div>
+
+      <p class="suggested" *ngIf="searchQuery">Suggested Recipes for you</p>
+      <p class="searched" *ngIf="searchQuery">
+        Because you serached for <span>{{ searchQuery }}</span>
+      </p>
+      <div class="suggestedRecipes" *ngIf="searchQuery">
+        <div
+          class="boiledEggs"
+          *ngFor="let recipe of recipes | search : searchQuery"
+          (click)="openRecipeDetails(recipe)"
+        >
+          <p>{{ recipe.name }}</p>
+        </div>
+      </div>
+
+      <!-- Add recipe form -->
+      <div class="overlay" *ngIf="showForm">
+        <form
+          [formGroup]="recipeForm"
+          class="recipeForm"
+          (submit)="addRecipe()"
+        >
+          <h2>Create New Recipe</h2>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            formControlName="name"
+            [(ngModel)]="name"
+            required
+          />
+          <div
+            *ngIf="
+              recipeForm.get('name')?.hasError('required') &&
+              recipeForm.get('name')?.touched
+            "
+            class="error-message"
+          >
+            Name is required.
+          </div>
+
+          <label for="description">Description:</label>
+          <textarea
+            name="description"
+            formControlName="description"
+            [(ngModel)]="description"
+            required
+          ></textarea>
+          <div
+            *ngIf="
+              recipeForm.get('description')?.hasError('required') &&
+              recipeForm.get('description')?.touched
+            "
+            class="error-message"
+          >
+            Description is required
+          </div>
+
+          <label for="ingredients">Ingredients:</label>
+          <textarea
+            name="ingredients"
+            [(ngModel)]="ingredients"
+            formControlName="ingredients"
+            required
+          ></textarea>
+          <div
+            *ngIf="
+              recipeForm.get('ingredients')?.hasError('required') &&
+              recipeForm.get('ingredients')?.touched
+            "
+            class="error-message"
+          >
+            Ingredients are required
+          </div>
+
+          <label for="cookingInstructions">Cooking Instructions:</label>
+          <textarea
+            name="cookingInstructions"
+            formControlName="cookingInstructions"
+            [(ngModel)]="cookingInstructions"
+            required
+          ></textarea>
+          <div
+            *ngIf="
+              recipeForm.get('cookingInstructions')?.hasError('required') &&
+              recipeForm.get('cookingInstructions')?.touched
+            "
+            class="error-message"
+          >
+            Cooking Instructions are required
+          </div>
+
+          <label for="preparationTime">Preparation Time:</label>
+          <input
+            type="text"
+            name="preparationTime"
+            formControlName="preparationTime"
+            [(ngModel)]="preparationTime"
+            required
+          />
+          <div
+            *ngIf="
+              recipeForm.get('preparationTime')?.hasError('required') &&
+              recipeForm.get('preparationTime')?.touched
+            "
+            class="error-message"
+          >
+            Preparation Time is required
+          </div>
+
+          <label for="servings">Servings:</label>
+          <input
+            type="text"
+            name="servings"
+            formControlName="servings"
+            [(ngModel)]="servings"
+            required
+          />
+          <div
+            *ngIf="
+              recipeForm.get('servings')?.hasError('required') &&
+              recipeForm.get('servings')?.touched
+            "
+            class="error-message"
+          >
+            Servings are required
+          </div>
+
+          <button type="submit">Add Recipe</button>
+          <button type="button" (click)="cancelForm()">Cancel</button>
+        </form>
+      </div>
+
+      <!-- edit user profile pop up-->
+      <div
+        class="user-profile-dialog"
+        *ngIf="showUserProfile"
+        [ngClass]="{ 'show-dialog': showUserProfile }"
+        (click)="hideUserProfileDialog()"
+      >
+        <div class="dialog-content" (click)="$event.stopPropagation()">
+          <h2>User Profile</h2>
+          <p>Name: {{ currentUser?.name }}</p>
+          <p>Email: {{ currentUser?.email }}</p>
+          <p>Password: {{ currentUser?.password }}</p>
+          <button (click)="editUserProfile()">Edit Profile</button>
+          <div class="user-details-dialog" *ngIf="editingProfile">
+            <div class="dialog-content" (click)="$event.stopPropagation()">
+              <h2>Edit User Details</h2>
+              <label for="name">Name:</label>
+              <input
+                *ngIf="currentUser"
+                type="text"
+                name="name"
+                [(ngModel)]="currentUser.name"
+              />
+
+              <label for="email">Email:</label>
+              <input
+                *ngIf="currentUser"
+                type="text"
+                name="email"
+                [(ngModel)]="currentUser.email"
+              />
+
+              <label for="email">Password:</label>
+              <input
+                *ngIf="currentUser"
+                type="text"
+                name="password"
+                [(ngModel)]="currentUser.password"
+              />
+
+              <!-- Add other user details inputs here -->
+
+              <button (click)="saveUserDetails()">Save</button>
+              <button (click)="cancelEditUserProfile()">Cancel</button>
+            </div>
+          </div>
+          <button class="close-dialog-button" (click)="hideUserProfileDialog()">
+            Close
+          </button>
+          <!-- Close button for the entire dialog -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

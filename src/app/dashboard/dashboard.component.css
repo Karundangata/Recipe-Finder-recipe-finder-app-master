@@ -1,0 +1,483 @@
+.navbar {
+  height: 20vh;
+  border: 1px solid rgb(217, 217, 217);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.planlife {
+  width: 22.3%;
+  background-color: rgb(15, 15, 45);
+  font-size: 1rem;
+  padding: 1rem;
+  margin-left: -0.6rem;
+}
+
+.panlifeparagraph {
+  color: white;
+}
+
+.panlifeparagraph span {
+  color: #3ab399;
+}
+
+.heathymeals {
+  color: rgb(217, 217, 217);
+}
+
+
+/* create new ingredient stylings */
+.createNew {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3ab399;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease; 
+}
+
+.createNew p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.createNew p span {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.createNew:hover {
+  background-color: #1d7c74; /* Darker color on hover */
+}
+
+.createNew:hover p {
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.createNew:hover p span {
+  animation: bounce 0.8s ease infinite; /* Add bouncing animation on hover */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* end of create new ingredient stylings */
+
+.discover {
+  display: flex;
+  gap: 1rem;
+}
+
+.hello {
+  font-size: 2rem;
+}
+
+.recipes {
+  font-size: 2rem;
+  color: rgb(15, 15, 45);
+}
+
+/* Style the search bar container */
+.search-bar {
+  position: relative;
+}
+
+.search-icon {
+  margin-left: 5rem;
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-75%);
+  color: #aaa;
+}
+
+.navbarsearchbar {
+  margin-left: 5rem;
+  margin-top: 1.2rem;
+  width: 20rem;
+  font-size: 14px;
+  padding: 1rem;
+  height: 3vh;
+  padding-left: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 20px;
+  outline: none;
+}
+
+.leftMenuBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid transparent;
+  width: 29.6%;
+  height: 70vh;
+  background-color: #f7f8fa;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.leftMenuBar p {
+  margin: 0;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.leftMenuBar p:hover {
+  background-color: #3ab399;
+  color: white;
+}
+
+.leftMenuBar p:hover i {
+  margin-right: 8px; 
+  color: white; 
+}
+
+
+.leftMenuBar .fas {
+  font-size: 24px;
+}
+
+.leftMenuBar p i {
+  margin-right: 8px; 
+  color: #3ab399; 
+  transition: color 0.3s ease;
+}
+
+.content {
+  display: flex;
+}
+
+.rightMenuBar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  /* Maintain aspect ratio and cover the container */
+  object-fit: cover;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.apetizers,
+.baking,
+.grilling,
+.chicken {
+  padding: 1rem;
+  width: 30%;
+  height: 10vh;
+  border: 5px solid #f7f8fa;
+  /* transition for smooth effect */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.apetizers:hover,
+.baking:hover,
+.grilling:hover,
+.chicken:hover {
+  background-color: #3ab399;
+  color: white;
+  cursor: pointer;
+}
+
+.suggested {
+  font-weight: bold;
+}
+
+.searched span {
+  color: #3ab399;
+}
+
+.suggestedRecipes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.boiledEggs {
+  padding: 1rem;
+  width: 30%;
+  height: 10vh;
+  border: 5px solid #f7f8fa;
+}
+
+.boiledEggs:hover{
+  background-color: #3ab399;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* form stylings */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 45, 0.6); /* Semi-transparent dark background */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipeForm {
+  background-color: #f7f8fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  max-width: 400px; /* Limit the width of the form */
+}
+
+.recipeForm  h2 {
+  margin-bottom: 15px;
+  color: #3ab399;
+}
+
+.recipeForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.recipeForm  input,
+.recipeForm  select,
+.recipeForm  textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #3ab399; /* Add a border and use green color */
+  border-radius: 4px;
+}
+
+.recipeForm  input:focus,
+.recipeForm  select:focus,
+.recipeForm  textarea:focus {
+  outline: none;
+  border-color: #3ab399; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(58, 179, 153, 0.5); /* Add a shadow on focus */
+}
+
+.recipeForm  button {
+  background-color: #3ab399;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.recipeForm  button[type="submit"] {
+  margin-right: 10px;
+}
+
+.recipeForm  button:hover {
+  background-color: rgb(15, 15, 45); /* Darker color on hover */
+}
+
+.recipeForm  button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow on focus */
+}
+
+.recipeForm  button[type="submit"]:hover {
+  background-color: #3ab399; /* Restore original color on hover */
+}
+
+/* end of form stylings */
+
+
+/* recipe details styling */
+/* recipe details styling */
+.recipe-details-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.show-dialog {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dialog-content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.dialog-content h2 {
+  margin-bottom: 10px;
+  color: #3ab399;
+}
+
+.dialog-content p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.dialog-content button {
+  background-color: #3ab399;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-content button:hover {
+  background-color: #319286;
+}
+
+/* user profile dialog */
+.user-profile-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Set a high z-index value to ensure it's above other elements */
+}
+
+.show-dialog {
+  display: flex;
+}
+
+/* Style for the "Cancel" button */
+.user-details-dialog button.cancel-button {
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.user-details-dialog button.cancel-button:hover {
+  background-color: #aaa;
+}
+
+/* Style for the "Close" button */
+.close-dialog-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 16px;
+  float: right;
+}
+
+.close-dialog-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Style for the "Edit User Details" section */
+.user-details-dialog .edit-details-section {
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the section title */
+.user-details-dialog .section-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* Style for input fields */
+.user-details-dialog input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the "Save" and "Cancel" buttons */
+.user-details-dialog button {
+  background-color: #3ab399 ;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+.user-details-dialog button.cancel-button {
+  background-color: #ccc;
+  color: white;
+}
+
+.user-details-dialog button:hover {
+  background-color:#319286 ;
+}
+
+.user-details-dialog button.cancel-button:hover {
+  background-color: #aaa;
+}
+
+
+.validation-message{
+  color: red;
+}
+
+.error-message{
+  color: red;
+}

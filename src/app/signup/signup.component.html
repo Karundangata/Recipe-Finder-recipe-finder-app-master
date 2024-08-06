@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="leftMenuBar">
+    <div class="welcomeBack">
+      <p>Welcome Back!!</p>
+    </div>
+    <div class="welcomeBackInfo">
+      <p>To keep connected with us please login with your personal info</p>
+    </div>
+    <div routerLink="/signin" class="signIn">
+      <button>SIGN IN</button>
+    </div>
+  </div>
+  <div class="rightMenuBar">
+    <div class="createAccount">
+      <p>Create Account</p>
+    </div>
+
+    <div class="inputs">
+      <!-- ngModel is a directive used for two way data binding -->
+      <!-- establishes conenction between the input field in the view and the corresponding property in component class -->
+      <!-- when a value is entered or modified in the input field the ngModel directive automatically updates the bound property in the component class -->
+      <!-- likewise if the property value is changed in the component class, the input field will reflect the updated value -->
+      <input type="text" placeholder="Name" [(ngModel)]="name" required/>
+      <input type="text" placeholder="Email" [(ngModel)]="email" required email/>
+      <input type="password" placeholder="Password" [(ngModel)]="password" required />
+    </div>
+
+    <!-- event binding - allows you to respond to user interactions or actions such as button clicks  -->
+    <div class="signUp">
+    <!-- allows you associate functions with events triggerred by user interactions -->
+      <button (click)="signUpUser()">SIGN UP</button>
+    </div>
+    <div class="error" *ngIf="error">{{error}}</div>
+  </div>
+</div>
